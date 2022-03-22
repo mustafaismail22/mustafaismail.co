@@ -2,18 +2,21 @@
   "name": "mustafaismail.co",
   "private": true,
   "version": "0.0.0",
-  "homepage": "http://mustafaismail.co/",
+  "homepage": "mustafaismail.co",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "prettier": "prettier --write ./src ./index.html",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "predeploy": "rm -rf dist && npm run build && npm run add-domain",
+    "deploy": "gh-pages -d dist",
+    "add-domain": "echo mustafaismail.co > dist/CNAME"
   },
   "dependencies": {
+    "prop-types": "^15.8.1",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-ga": "^3.3.0"
   },
   "devDependencies": {
     "@types/react": "^17.0.33",
